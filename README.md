@@ -61,7 +61,7 @@ To toggle the defaults, you may use the following *drush* commands:
       drush vset fixteaserlinks_readmore true
 
     D8:  
-      drush config-set fixteaserlinks.settings fixteaserlinks_readmore 0
+      drush config-set fixteaserlinks.settings fixteaserlinks_comment 0
       drush config-set fixteaserlinks.settings fixteaserlinks_readmore 1
 
 The first of those drush commands will stop removing comment links.
