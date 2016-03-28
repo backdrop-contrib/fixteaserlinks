@@ -1,0 +1,3 @@
+name = Remove links from teasers
+description = * Removes some links from teasers.
+core = 7.x

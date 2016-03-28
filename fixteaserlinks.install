@@ -9,6 +9,6 @@
  * Implements hook_uninstall().
  */
 function fixteaserlinks_uninstall() {
-  \Drupal::config('fixteaserlinks.settings')->clear('fixteaserlinks_comment')->save();
-  \Drupal::config('fixteaserlinks.settings')->clear('fixteaserlinks_readmore')->save();
+  variable_del('fixteaserlinks_comment');
+  variable_del('fixteaserlinks_readmore');
 }

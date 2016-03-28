@@ -1,4 +1,0 @@
-name: 'Fix teaserlinks'
-description: 'Remove links from teasers.'
-core: 8.x
-type: module

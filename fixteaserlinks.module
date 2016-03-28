@@ -6,32 +6,31 @@
 *
 */
 
-use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Node\NodeInterface;
-
 /**
  * Implements hook_help().
  */
-function fixteaserlinks_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    case 'help.page.fixteaserlinks':
+function fixteaserlinks_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#fixteaserlinks':
       $output = '<p>' . t('The “Fix teaserlink” module is a simple module that removes some links from teasers.  See README.md for details') . '</p>';
       return $output;
   }
 }
 
 /**
- * Implements hook_node_links_alter().
+ * Implements hook_node_view_alter().
  */
-function fixteaserlinks_node_links_alter(array &$links, NodeInterface $entity, array &$context) {
-  if ('teaser' == $context['view_mode']) {
-    if (\Drupal::config('fixteaserlinks.settings')->get('fixteaserlinks_comment')) {
-      // remove "add comment" or "log in ... to comment" link from node teaser mode display
-      unset($links['comment__comment']);
+function fixteaserlinks_node_view_alter(&$build) {
+  if ($build['#view_mode'] == 'teaser') {
+    if (variable_get('fixteaserlinks_comment', TRUE)) {
+      // remove "add comment" link from node teaser mode display
+      unset($build['links']['comment']['#links']['comment-add']);
+      // and if logged out this will cause another list item to appear, so let's get rid of that
+      unset($build['links']['comment']['#links']['comment_forbidden']);
     }
     // Get rid of "read more" as well.
-    if (\Drupal::config('fixteaserlinks.settings')->get('fixteaserlinks_readmore')) {
-      unset($links['node']['#links']['node-readmore']);
+    if (variable_get('fixteaserlinks_readmore', FALSE)) {
+      unset($build['links']['node']['#links']['node-readmore']);
     }
   }
 }
