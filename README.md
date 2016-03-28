@@ -12,8 +12,7 @@
 
 The “Fix teaserlinks” module is a simple module that may be used to
 mange the visibility of the links that appear below teasers (i.e. “Add
-new comment” and “Log in or register to post comments” and “Read
-more”).
+new comment”, “Log in or register to post comments” and “Read more”).
 
 It is intended for site builders who want a cleaner look of teaser lists.
 
@@ -43,7 +42,7 @@ None.
    module. See: [Installing D7 modules][6] or [Installing D8
    modules][7] for further information.
 
-2. Enable the "Fix teaserlinks" module on the Modules list page in the
+2. Enable the “Fix teaserlinks” module on the Modules list page in the
    administrative interface.
 
 3. Clear all caches.
@@ -51,9 +50,9 @@ None.
 
 ## Configuration
 
-The module has no menu. By default, it will prevent the links "Add new
-comment" and "Log in or register to post comments" from appearing
-below teasers. It will not remove the link "Read more".
+The module has no menu. By default, it will prevent the links “Add new
+comment” and “Log in or register to post comments” from appearing
+below teasers. It will not remove the link “Read more”.
 
 To toggle the defaults, you may use the following *drush* commands:
 
@@ -66,7 +65,7 @@ To toggle the defaults, you may use the following *drush* commands:
       drush config-set fixteaserlinks.settings fixteaserlinks_readmore 1
 
 The first of those drush commands will stop removing comment links.
-The second will remove the "Read more" link.
+The second will remove the “Read more” link.
 
 To cancel these effects and delete the variables, disable the module
 and clear caches.
