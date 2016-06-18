@@ -1,84 +1,65 @@
-## Contents of this file
+Fix Teaser Links
+================
 
-* Introduction
-* Requirements
-* Recommended modules
-* Installation
-* Configuration
-* Maintainer
-
-
-## Introduction
-
-The “Fix teaserlinks” module is a simple module that may be used to
-mange the visibility of the links that appear below teasers (i.e. “Add
-new comment”, “Log in or register to post comments” and “Read more”).
+The “Fix Teaser Links” module is a simple module that may be used to mange the
+visibility of the links that appear below content teasers (i.e. “Add new
+comment”, “Log in or register to post comments”, “Read more”).
 
 It is intended for site builders who want a cleaner look of teaser lists.
 
-* For a full description of the module, visit the [project page][1].
+Overview
+--------
 
-* To submit bug reports and feature suggestions, or to track changes
-  visit the project's [issue tracker][2].
+The module has no menu. By default, it will prevent the links “Add new comment”
+and “Log in or register to post comments” from appearing below teasers. It will
+not remove the link “Read more”.
 
+The Drupal version of this module used drush commands to toggle these settings.
 
-## Requirements
+The short-term plan for the Backdrop version is to implement a configuration
+page so that these settings can be easily toggled via the Admin UI.
 
-None.
+The long-term plan is to have these settings be configured per-content type via
+the Manage display > Teaser page (`/admin/structure/types/manage/[content_type]/display/teaser`).
 
-## Recommended modules
+Installation
+------------
 
-* [Advanced help][4]:  
-  When this module is enabled, display of the project's `README.md`
-  will be rendered when you visit
-  `help/fixteaserlinks/README.md`.
-* [Markdown filter][5]:  
-  When this module is enabled, display of the project's `README.md`
-  will be rendered with the markdown filter.
+- Install and enable this module using the official Backdrop CMS instructions at
+https://backdropcms.org/guide/modules
 
-# Installation
+- [Planned - not implemented yet] Visit the configuration page under
+Administration > Configuration > System > Teaser Links
+(admin/config/system/fixteaserlinks) and enter the required information.
 
-1. Install as you would normally install a contributed drupal
-   module. See: [Installing D7 modules][6] or [Installing D8
-   modules][7] for further information.
+- Clear caches.
 
-2. Enable the “Fix teaserlinks” module on the Modules list page in the
-   administrative interface.
+Documentation
+-------------
 
-3. Clear all caches.
+Additional documentation is located in the Wiki:
+https://github.com/backdrop-contrib/fixteaserlinks/wiki/Documentation
 
+Issues
+------
 
-## Configuration
+Bugs and Feature requests should be reported in the Issue Queue:
+https://github.com/backdrop-contrib/fixteaserlinks/issues
 
-The module has no menu. By default, it will prevent the links “Add new
-comment” and “Log in or register to post comments” from appearing
-below teasers. It will not remove the link “Read more”.
+Current Maintainers
+-------------------
 
-To toggle the defaults, you may use the following *drush* commands:
+- Gregory Netsas (https://github.com/klonos)
+- co-maintainers wanted
 
-    D7:  
-      drush vset fixteaserlinks_comment false
-      drush vset fixteaserlinks_readmore true
+Credits
+-------
 
-    D8:  
-      drush config-set fixteaserlinks.settings fixteaserlinks_comment 0
-      drush config-set fixteaserlinks.settings fixteaserlinks_readmore 1
+- Ported to Backdrop CMS by Gregory Netsas (https://github.com/klonos)
+- Originally written for Drupal by Gisle Hannemyr (https://www.drupal.org/u/gisle)
 
-The first of those drush commands will stop removing comment links.
-The second will remove the “Read more” link.
+License
+-------
 
-To cancel these effects and delete the variables, disable the module
-and clear caches.
-
-
-## Maintainer
-
-* [gisle](https://www.drupal.org/u/gisle)
-
-[1]: https://drupal.org/project/fixteaserlinks
-[2]: https://drupal.org/project/issues/fixteaserlinks
-[3]: https://www.drupal.org/project/advanced_help_hint
-[4]: https://www.drupal.org/project/advanced_help
-[5]: https://www.drupal.org/project/markdown
-[6]: https://drupal.org/documentation/install/modules-themes/modules-7
-[7]: https://drupal.org/documentation/install/modules-themes/modules-8
+This project is GPL v2 software. See the LICENSE.txt file in this directory for
+complete text.
