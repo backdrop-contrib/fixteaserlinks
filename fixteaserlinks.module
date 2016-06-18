@@ -7,18 +7,29 @@
 */
 
 /**
+ * Implements hook_config_info().
+ */
+function fixteaserlinks_config_info() {
+  $prefixes['fixteaserlinks.settings'] = array(
+    'label' => t('Fix Teaser Links settings'),
+    'group' => t('Configuration'),
+  );
+  return $prefixes;
+}
+
+/**
  * Implements hook_node_view_alter().
  */
 function fixteaserlinks_node_view_alter(&$build) {
   if ($build['#view_mode'] == 'teaser') {
-    if (variable_get('fixteaserlinks_comment', TRUE)) {
+    if (config_get('fixteaserlinks.settings', 'fixteaserlinks_comment')) {
       // remove "add comment" link from node teaser mode display
       unset($build['links']['comment']['#links']['comment-add']);
       // and if logged out this will cause another list item to appear, so let's get rid of that
       unset($build['links']['comment']['#links']['comment_forbidden']);
     }
     // Get rid of "read more" as well.
-    if (variable_get('fixteaserlinks_readmore', FALSE)) {
+    if (config_get('fixteaserlinks.settings', 'fixteaserlinks_readmore')) {
       unset($build['links']['node']['#links']['node-readmore']);
     }
   }
