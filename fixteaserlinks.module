@@ -7,17 +7,6 @@
 */
 
 /**
- * Implements hook_help().
- */
-function fixteaserlinks_help($path, $arg) {
-  switch ($path) {
-    case 'admin/help#fixteaserlinks':
-      $output = '<p>' . t('The “Fix teaserlink” module is a simple module that removes some links from teasers.  See README.md for details') . '</p>';
-      return $output;
-  }
-}
-
-/**
  * Implements hook_node_view_alter().
  */
 function fixteaserlinks_node_view_alter(&$build) {
