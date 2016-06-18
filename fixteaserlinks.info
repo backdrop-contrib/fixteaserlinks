@@ -1,5 +1,5 @@
 name = Fix Teaser Links
-description = Mange the visibility of the links that appear below node teasers.
+description = Mange the visibility of the links that appear below content teasers.
 backdrop = 1.x
 type = module
 configure = admin/config/system/fixteaserlinks
