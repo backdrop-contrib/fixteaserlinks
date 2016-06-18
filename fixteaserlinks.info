@@ -1,3 +1,5 @@
-name = Remove links from teasers
-description = * Removes some links from teasers.
-core = 7.x
+name = Fix Teaser Links
+description = Mange the visibility of the links that appear below node teasers.
+backdrop = 1.x
+type = module
+configure = admin/config/system/fixteaserlinks
