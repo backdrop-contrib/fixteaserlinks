@@ -18,8 +18,8 @@ function fixteaserlinks_update_last_removed() {
 function fixteaserlinks_update_1000() {
   // Migrate variables to config.
   $config = config('fixteaserlinks.settings');
-  $config->set('fixteaserlinks_comment', update_variable_get('fixteaserlinks_comment', TRUE));
-  $config->set('fixteaserlinks_readmore', update_variable_get('fixteaserlinks_readmore', FALSE));
+  $config->set('comment', update_variable_get('fixteaserlinks_comment', TRUE));
+  $config->set('readmore', update_variable_get('fixteaserlinks_readmore', FALSE));
   $config->save();
 
   // Delete variables.
