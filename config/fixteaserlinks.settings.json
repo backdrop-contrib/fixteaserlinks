@@ -1,5 +1,5 @@
 {
   "_config_name": "fixteaserlinks.settings",
-  "fixteaserlinks_comment": true,
-  "fixteaserlinks_readmore": false
+  "comment": true,
+  "readmore": false
 }
